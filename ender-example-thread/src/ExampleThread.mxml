@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute"
+	frameRate="45"
+	creationComplete="onCreationComplete()">
+	<mx:Script>
+		<![CDATA[
+			import ender.threads.Thread;
+			
+			/** Our thread. */
+			[Bindable]
+			protected var thread:MyThread;
+			
+			/**
+			 * Event handler for creationComplete.
+			 */
+			protected function onCreationComplete():void {
+				// start!
+				(thread = new MyThread(Thread.URGENT_PRIORITY)).start();
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Label text="{thread.status}" horizontalCenter="0" verticalCenter="0" />
+</mx:Application>

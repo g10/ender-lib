@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+	layout="absolute"
+	frameRate="45"
+	implements="ender.threads.IRunnable"
+	creationComplete="onCreationComplete()">
+	<mx:Script>
+		<![CDATA[
+			import ender.threads.Thread;
+			
+			/** Loop variable. (Note we make this a field and not local for continuous execution!) */
+			protected var iLoop:int;
+	
+			/** Status text. */
+			[Bindable]
+			public var status:String = "";
+			
+			/**
+			 * Event handler for creationComplete.
+			 */
+			protected function onCreationComplete():void {
+				// start!
+				new Thread(this, Thread.URGENT_PRIORITY).start();
+			}
+			
+			/**
+			 * Our run() method.
+			 */
+			public function run():void {
+				// initialize the loop construct
+				iLoop = Thread.isFirstRun(this) ? 0 : iLoop;
+
+				// loop
+				while (iLoop <= 1000) {
+					// update our status
+					status = "Iteration #" + iLoop;
+	
+					// bump
+					iLoop++;
+					
+					// yield on each iteration (we could iterate more but we want smooth animation.)
+					Thread.yield();
+				}
+			} 
+		]]>
+	</mx:Script>
+	
+	<mx:Label text="{status}" horizontalCenter="0" verticalCenter="0" />
+</mx:Application>
