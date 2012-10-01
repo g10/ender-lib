@@ -6,7 +6,7 @@
 	 * without having to extend Thread.
 	 * 
 	 * This is similar to the method used in Java.
-	 */  
+	 */
 	public interface IRunnable
 	{
 		/**
@@ -15,6 +15,6 @@
 		 * real threading implementations, so avoid local variables, or use them with caution.
 		 * You should rely on class fields to maintain all state.
 		 */
-		function run():void;
+		function run() : void;
 	}
 }

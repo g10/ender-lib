@@ -1,0 +1,16 @@
+h2. Changelog:
+
+h3. v1.2 - Giovanni Carnel
+
+* removed FLEX dependency / pure AS3 version
+* added ANT build + version + changelog
+* moved code to github
+
+h3. v1.1 - Jason Crist
+
+Issue fix: Can't run two threads of the same class at the same time
+
+h3. v1.0 - John Blanco 
+
+Original
+

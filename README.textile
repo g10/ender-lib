@@ -1,0 +1,8 @@
+h1. Ender lib (pure AS3 implementation)
+
+Fork of Ender lib at http://code.google.com/p/ender-lib/
+
+*As AS3 workers are only available for desktop (as of flash player 11.4 / AIR 3.4), virtual threading is still useful for iOS and Android.*
+
+Ender Lib can emulate threading that will avoid apps that appear to "freeze".
+

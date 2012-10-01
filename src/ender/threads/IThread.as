@@ -10,23 +10,24 @@
 		/**
 		 * Starts the thread.
 		 */
-		function start():void;
-		
+		function start() : void;
+
 		/**
 		 * Stops the thread.
 		 */
-		function stop():void;
+		function stop() : void;
 
 		/**
 		 * The runnable that defines run().
 		 */
-		function get runnable():IRunnable;
-		
+		function get runnable() : IRunnable;
+
 		/**
 		 * The priority the thread should be run at.  Possible values are left up to 
 		 * individual implementations.
 		 */
-		function get priority():int;
-		function set priority(value:int):void;
+		function get priority() : int;
+
+		function set priority(value : int) : void;
 	}
 }
