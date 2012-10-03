@@ -120,10 +120,10 @@
 
 					// add thread to schedule
 					threadSchedule.addThread(thread);
-				}
 
-				// add
-				_threadSchedules[thread.priority] = threadSchedule;
+					// add threadSchedule to list
+					_threadSchedules[thread.priority] = threadSchedule;
+				}
 
 				// restart timer (in case we need to execute more often)
 				restartTimer();
@@ -173,7 +173,7 @@
 
 				if(maxPriority != Thread.NO_PRIORITY)
 				{
-					//Application.application.addEventListener(Event.ENTER_FRAME, onThreadTick);
+					// Application.application.addEventListener(Event.ENTER_FRAME, onThreadTick);
 					stage.addEventListener(Event.ENTER_FRAME, onThreadTick);
 					_isTicking = true;
 				}
@@ -197,7 +197,7 @@
 			if(_isTicking)
 			{
 				// stop
-				//Application.application.removeEventListener(Event.ENTER_FRAME, onThreadTick);
+				// Application.application.removeEventListener(Event.ENTER_FRAME, onThreadTick);
 				stage.removeEventListener(Event.ENTER_FRAME, onThreadTick);
 				_isTicking = false;
 			}
